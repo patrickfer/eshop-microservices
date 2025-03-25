@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+   catalogdb:
+     image: mongo
+
+   basketdb:
+     image: mongo
+
+   distribuitedcache:
+      image: redis
+    
+   orderdb:
+      image: postgres
+
+   messagebroker:
+    image: rabbitmq:management
+
+   catalog.api:
+     image: ${DOCKER_REGISTRY-}catalogapi
+     build:
+       context: .
+       dockerfile: Services/Catalog/Catalog.API/Dockerfile
+
+   basket.api:
+     image: ${DOCKER_REGISTRY-}basketapi
+     build:
+       context: .
+       dockerfile: Services/Basket.API/Dockerfile
+       
+   discount.grpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
+    build:
+      context: .
+      dockerfile: Services/Discount/Discount.Grpc/Dockerfile
+
+   ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Services/Ordering/Ordering.API/Dockerfile
+
+   yarpapigateway:
+    image: ${DOCKER_REGISTRY-}yarpapigateway
+    build:
+      context: ApiGateways/YarpApiGateway
+      dockerfile: Dockerfile
+
+volumes:
+ mongo_catalog:
+ mongo_basket:
+ postgres_order:
+
+
+
+
+
+
+
