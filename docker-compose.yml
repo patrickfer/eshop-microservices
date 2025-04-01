@@ -46,10 +46,17 @@ services:
       context: ApiGateways/YarpApiGateway
       dockerfile: Dockerfile
 
+   shopping.web:
+    image: ${DOCKER_REGISTRY-}shoppingweb
+    build:
+      context: WebApps/Shopping.Web
+      dockerfile: Dockerfile
+
 volumes:
  mongo_catalog:
  mongo_basket:
  postgres_order:
+
 
 
 

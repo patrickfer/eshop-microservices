@@ -16,7 +16,7 @@
         public string Street { get; set; } = default!;
         public string ZipCode { get; set; } = default!;
 
-        //Payment
+        // Payment
         public string CardName { get; set; } = default!;
         public string CardNumber { get; set; } = default!;
         public string Expiration { get; set; } = default!;

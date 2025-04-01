@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Ordering.Infrastructure.Data.Migrations
+namespace Ordering.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -69,7 +69,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                     ShippingAddress_LastName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ShippingAddress_State = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ShippingAddress_Street = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    ShippingAddress_ZipCode = table.Column<string>(type: "character varying(5)", maxLength: 5, nullable: false),
+                    ShippingAddress_ZipCode = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),

@@ -33,8 +33,8 @@ namespace Ordering.Application.Orders.EventHandlers.Integration
                 Status: Ordering.Domain.Enums.OrderStatus.Pending,
                 OrderItems:
                 [
-                    new OrderItemDto(orderId, Guid.NewGuid().ToString(), 2, 500),
-                    new OrderItemDto(orderId, Guid.NewGuid().ToString(), 1, 400)
+                    new OrderItemDto(orderId, "6512fbd1c9a5d3f4e8b7a9c2", 2, 950),
+                    new OrderItemDto(orderId, "60d5f5a4e2b1c3d7f9e8a6b4", 1, 950)
                 ]);
 
             return new CreateOrderCommand(orderDto);
